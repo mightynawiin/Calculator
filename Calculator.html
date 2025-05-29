@@ -1,171 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            padding: 0;
-            margin:0;
-            box-sizing:border-box;
-        }
-        body{
-            background-color:rgb(250, 250, 250);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-          .main{
-            background-color: #333;
-            padding:40px;
-            border-radius:20px;
-            min-width:300px;
-            min-height:500px
-          }
-          .container{
-            display: grid;
-            gap:10px;
-          }
-          .container .value{
-            grid-column: span 4;
-            height:100px;
-            background-color:#d6e681;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            border:none;
-            outline:none;
-            font-size: 36px;
-            padding: 10px;
-          }
-          .container button{
-            border:none;
-            width:80px;
-            height:80px;
-            background: linear-gradient(180deg,#2f2f2f,#3f3f3f);
-            color: white;
-            border-radius: 10px;
-            cursor:pointer;
-            box-shadow: inset 8px 0 8px rgba(0,0,0,0.15),
-             0 -8px 8px rgba(0,0,0,0.25),
-             0 0 0 2px rgba(0,0,0,1.75),
-             10px 20px 25px rgba(0,0,0,0.4);
-             position:relative;
-          }
-          .container button::before{
-            content: '';
-            position: absolute;
-            top: 3px;
-            left:4px;
-            right:12px;
-            bottom:14px;
-            border-radius: 10px;
-            background: linear-gradient(90deg,#2d2d2d,#4d4d4d);
-            box-shadow: -5px 5px 15px rgba(0,0,0,0.1),
-            10px 5px 10px rgba(0,0,0,0.1);
-            border-left: 1px solid rgba(0,0,0,0.27);
-            border-bottom: 1px solid rgba(0,0,0,0.27);
-            border-top:1px solid rgba(0,0,0,0.6);
-          }
-          .container button i{
-            position: relative;
-            text-transform: uppercase;
-            font-style: normal;
-            font-size: 1.5rem;
-          }
-          .container button:active{
-            filter:brightness(1.5);
-          }
-          .container button.clear{
-            background: #f00;
-          }
-          .container button.plus{
-            background:blue;
-          }
-          .container button.clear::before{
-            background: linear-gradient(90deg, #d20000,rgba(255, 255, 255 ,0.336));
-            border-left: 1px solid rgba(0,0,0,0.27);
-            border-bottom: 1px solid rgba(0,0,0,0.27);
-            border-top:1px solid rgba(0,0,0,0.6);
-          }
-          .container button.plus::before{
-            background: linear-gradient(90deg, blue,rgba(255, 255, 255 ,0.336));
-            border-left: 1px solid rgba(0,0,0,0.27);
-            border-bottom: 1px solid rgba(0,0,0,0.27);
-            border-top:1px solid rgba(0,0,0,0.6);
-          }
-          .container button.plus{
-            grid-row: span 2;
-            height: 180px;
-          }
-          input.value{
-            text-align:right;
-          }
-          @media (max-width: 500px) {
-          .container button {
-            width: 70px;
-            height: 70px;
-            font-size: 1.2rem;
-          }
-          .container .value {
-            height: 80px;
-            font-size: 28px;
-          }
-        }
-
-    </style>
-    <script>
-      function fun(a){
-        if(a==='='){
-          if(document.getElementById('val').value===''){
-            document.getElementById('val').value='Enter Calculation'
-          }
-          try{
-          document.getElementById('val').value=eval(document.getElementById('val').value);
-          }
-          catch(error){
-             document.getElementById('val').value="ERROR";
-          }
-        }
-          else if(a==='C'){
-            document.getElementById('val').value='';
-          }
-        else{
-        document.getElementById('val').value=document.getElementById('val').value+a;
-      }
-    }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="calculator.css" />
+  <script src="calculator.js" defer></script>
 </head>
 <body>
-        <div class="main">
-            <div class="container">
-                <input  type="text"  class="value" id='val' readonly>
-                <button class="num clear"    onclick="fun('C')" > <i>C</i></button>
-                <button class="num"     onclick="fun(CE)"> <i>CE</i></button>
-                <button class="num"     onclick="fun('/')"> <i>/</i></button>
-                <button class="num"     onclick="fun('*')"> <i>*</i></button>
+  <div class="main">
+    <div class="container">
+      <input type="text" class="value" id="val" readonly />
+      <button class="num clear" onclick="fun('C')"><i>C</i></button>
+      <button class="num" onclick="fun('CE')"><i>CE</i></button>
+      <button class="num" onclick="fun('/')"><i>/</i></button>
+      <button class="num" onclick="fun('*')"><i>*</i></button>
 
-                <button class="num"     onclick="fun(9)"> <i>9</i></button>
-                <button class="num"     onclick="fun(8)"> <i>8</i></button> 
-                <button class="num"     onclick="fun(7)"> <i>7</i></button>
-                <button class="num"     onclick="fun('-')"> <i>-</i></button>
+      <button class="num" onclick="fun(9)"><i>9</i></button>
+      <button class="num" onclick="fun(8)"><i>8</i></button>
+      <button class="num" onclick="fun(7)"><i>7</i></button>
+      <button class="num" onclick="fun('-')"><i>-</i></button>
 
-                <button class="num"     onclick="fun(6)"> <i>6</i></button>
-                <button class="num"     onclick="fun(5)"> <i>5</i></button>
-                <button class="num"     onclick="fun(4)"> <i>4</i></button>
-                <button class="num"     onclick="fun('+')"> <i>+</i></button>
+      <button class="num" onclick="fun(6)"><i>6</i></button>
+      <button class="num" onclick="fun(5)"><i>5</i></button>
+      <button class="num" onclick="fun(4)"><i>4</i></button>
+      <button class="num" onclick="fun('+')"><i>+</i></button>
 
-                <button class="num"     onclick="fun(3)"> <i>3</i></button>
-                <button class="num"     onclick="fun(2)"> <i>2</i></button>
-                <button class="num"     onclick="fun(1)"> <i>1</i></button>
-                <button class="num plus"       onclick="fun('=')"> <i>=</i></button>
+      <button class="num" onclick="fun(3)"><i>3</i></button>
+      <button class="num" onclick="fun(2)"><i>2</i></button>
+      <button class="num" onclick="fun(1)"><i>1</i></button>
+      <button class="num plus" onclick="fun('=')"><i>=</i></button>
 
-                <button class="num"     onclick="fun(0)"> <i>0</i></button>
-                <button class="num"     onclick="fun('(')"> <i>(</i></button>
-                <button class="num "     onclick="fun(')')"> <i>)</i></button> 
-              </div>
-        </div>
+      <button class="num" onclick="fun(0)"><i>0</i></button>
+      <button class="num" onclick="fun('(')"><i>(</i></button>
+      <button class="num" onclick="fun(')')"><i>)</i></button>
+    </div>
+  </div>
 </body>
 </html>
