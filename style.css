@@ -103,8 +103,8 @@ body {
 
 @media (max-width: 500px) {
   .container button {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     font-size: 1.2rem;
   }
 
@@ -112,4 +112,9 @@ body {
     height: 80px;
     font-size: 28px;
   }
+  input{
+    width: 80px;
+  }
+  .main{
+    width:120px;
 }
