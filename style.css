@@ -23,7 +23,7 @@ body {
 
 .container {
   display: grid;
-  gap: 10px;
+  gap: 20px;
 }
 
 .container .value {
