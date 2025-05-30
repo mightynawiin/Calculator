@@ -1,6 +1,9 @@
 # 🧮 Calculator Web App
 
 A simple and responsive web-based calculator built using **HTML**, **CSS**, and **JavaScript**. This project allows users to perform basic arithmetic operations like addition, subtraction, multiplication, and division, mimicking the functionality of a physical calculator.
+## 🚀 Live Demo
+
+[Click here to try it out!](https://mighty-calculator.vercel.app/)
 
 ![Calculator Screenshot](https://github.com/mightynawiin/Calculator/blob/main/pro%20images/Screenshot%202025-05-29%20135843.png)
 
