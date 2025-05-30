@@ -113,8 +113,11 @@ body {
     font-size: 28px;
   }
   input{
-    width: 80px;
+    width: 240px;
   }
   .main{
     width:120px;
+  }
+  .container{
+    margin-right:20px;
 }
